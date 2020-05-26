@@ -20,7 +20,7 @@
 * [Link To Document](#Document)
 
 ## Technology
-
+[![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
 ## Requirements
 ### Library
 ### System
