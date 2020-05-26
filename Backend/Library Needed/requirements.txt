@@ -895,7 +895,7 @@ Keras==2.2.4
   - scipy [required: >=0.14, installed: 1.2.1]
     - numpy [required: >=1.8.2, installed: 1.16.1]
   - six [required: >=1.9.0, installed: 1.12.0]
-nltk==3.4
+nltk==3.4.5
   - singledispatch [required: Any, installed: 3.4.0.3]
     - six [required: Any, installed: 1.12.0]
   - six [required: Any, installed: 1.12.0]
