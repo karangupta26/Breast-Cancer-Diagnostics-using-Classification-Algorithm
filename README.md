@@ -4,8 +4,8 @@
 * Technology
 * Requirements
 * Project Aim
-- Library
-- System
+  * Library
+  * System
 * About Research Paper
 * System Setup
 * Platforms Used
