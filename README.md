@@ -20,19 +20,19 @@
 * [Link To Document](#Document)
 
 ## Technology
-##Requirements
-###Library
-###System
-##Project Aim
-##About Research Paper
-##System Setup
-##Platforms Used
+## Requirements
+### Library
+### System
+## Project Aim
+## About Research Paper
+## System Setup
+## Platforms Used
 ## Workflow
 ### Project Workflow
 ### Research Paper Workflow
-##Deployment
-##Result
+## Deployment
+## Result
 ### Project Result
 ### Research Paper Result
-##Future Work
-##Link To Document
+## Future Work
+## Link To Document
