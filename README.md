@@ -8,7 +8,7 @@
 * [Project Aim](#Project Aim)
 * [About Research Paper](#About Research Paper)
 * [System Setup](#System Setup)
-* [Platforms Used](#Platforms_Used)
+* [Platforms Used](#Platforms Used)
 * [Workflow](#Workflow)
   * [Project](#Project Workflow)
   * [Research Paper](#Research Paper Workflow)
@@ -20,19 +20,29 @@
 * [Link To Document](#Document)
 
 ## Technology
+
 ## Requirements
 ### Library
 ### System
+
 ## Project Aim
+
 ## About Research Paper
+
 ## System Setup
+
 ## Platforms Used
+
 ## Workflow
 ### Project Workflow
 ### Research Paper Workflow
+
 ## Deployment
+
 ## Result
 ### Project Result
 ### Research Paper Result
+
 ## Future Work
+
 ## Link To Document
