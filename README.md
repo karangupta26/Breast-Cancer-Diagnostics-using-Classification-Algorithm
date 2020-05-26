@@ -4,12 +4,12 @@
 * Technology
 * Requirements
 * Project Aim
-* Library
-* System
+- Library
+- System
 * About Research Paper
 * System Setup
 * Platforms Used
 * Deployment
 * Result
 * Future Work
-* Link To Document 
+* Link To Document
