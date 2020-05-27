@@ -35,16 +35,16 @@ The Python Library required for running the project are- [Requirements](https://
 #### Minimum Requirements
 
 | Component       | Specification                                 |
-| :-------------  | :----------------                             |
+| :-------------  | :-------------------------------------------  |
 | Processor       | Core i5-5th Generation                        |
 | RAM             | 8 GB- 16 GB                                   |
 | HDD Space       | 30 GB                                         |
-| GPU             | Nvidia 950M or above (Cuda and cuDNN Enabled) |        |
+| GPU             | Nvidia 950M or above (Cuda and cuDNN Enabled) |        
 
 #### Recommended Requirements
 
 | Component       | Specification                                            |
-| :-------------  | :----------------                                        |
+| :-------------  | :------------------------------------------------------  |
 | Processor       | Core i5-8th Generation                                   |
 | RAM             | 8 GB- 16 GB                                              |
 | HDD Space       | 30 GB                                                    |
@@ -82,10 +82,21 @@ In Whole Project we have used below mentioned platforms
 
 
 ## System Setup
-    pip install -r reuirements.txt
+    pip install -r requirements.txt
 
 ## Workflow
+
+In this Project/Paper there two workflows
+* 1st is for Project in Which we will select best model on the basis on accuracy and then deploy in flask Application
+* 2nd is Model Analysis on the basis of combination of Neural Networks and Classifiers. These Models are judged on the basis of Accuracy, Precision, Recall and F1-Value.
+
 ### Project Workflow
+
+It has two workflows
+
+* For Backend
+<img src="Documents/Images/Module-1.jpg">
+
 ### Research Paper Workflow
 
 ## Deployment
