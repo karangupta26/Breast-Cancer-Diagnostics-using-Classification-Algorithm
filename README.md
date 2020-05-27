@@ -29,8 +29,8 @@ in the frontend we have used Flask app for handling these Inputs
 ### Library
 The Python Library required for running the project are- [Requirements](https://github.com/karangupta26/Breast-Cancer-Diagnostics-using-Classification-Algorithm/blob/master/Backend/Library%20Needed/requirements.txt)
 
-'''pip install -r requirements
-'''
+    pip install -r requirements
+
 ### System
 
 ## Project Aim
