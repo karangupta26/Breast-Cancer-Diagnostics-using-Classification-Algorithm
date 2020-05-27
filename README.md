@@ -32,7 +32,7 @@ The Python Library required for running the project are- [Requirements](https://
     pip install -r requirements.txt
 
 ### System
-### Minimum Requirements
+#### Minimum Requirements
 
 | Component       | Specification                                 |
 | :-------------  | :----------------                             |
@@ -41,7 +41,7 @@ The Python Library required for running the project are- [Requirements](https://
 | HDD Space       | 30 GB                                         |
 | GPU             | Nvidia 950M or above (Cuda and cuDNN Enabled) |        |
 
-### Recommended Requirements
+#### Recommended Requirements
 
 | Component       | Specification                                            |
 | :-------------  | :----------------                                        |
@@ -51,12 +51,19 @@ The Python Library required for running the project are- [Requirements](https://
 | GPU             | Nvidia 1050Ti or above (Cuda and cuDNN Enabled)          |
 |                 | or Nvidia Testla Family like K40, K80, P100, V100        |
 
-The above Recommended GPU's or TPU's can be found on [Kaggle](kaggle.com) or
+The above Recommended GPU's or TPU's can be found on [Kaggle](https://www.kaggle.com/) or
 [Google Colab](https://colab.research.google.com/)
 
 ## Project Aim
+* To Study a Various Combinations of Classification Algorithms for Breast Cancer Diagnostics to Generate a WEB API.
+* Use that Web API in Applications for the Analysis of Breast cancer histopathological images.
 
 ## About Research Paper
+
+Simultaneously this Project was Documented as a Research Paper under my Major Project guide
+[Ms. Nidhi Chawla](https://www.linkedin.com/in/nidhi-chawla-044a999b/). The Paper is published
+in Procedia Computer Science Volume 167, Pages 878-889 entitled as-
+[Analysis of Histopathological Images for Prediction of Breast Cancer Using Traditional Classifiers with Pre-Trained CNN](https://doi.org/10.1016/j.procs.2020.03.427)
 
 ## System Setup
 
