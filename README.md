@@ -87,21 +87,23 @@ In Whole Project we have used below mentioned platforms
 ## Workflow
 
 In this Project/Paper there two workflows
-* 1st is for Project in Which we will select best model on the basis on accuracy and then deploy in flask Application
-* 2nd is Model Analysis on the basis of combination of Neural Networks and Classifiers. These Models are judged on the basis of Accuracy, Precision, Recall and F1-Value.
+1. For Project in Which we will select best model on the basis on accuracy and then deploy in flask Application
+2. Model Analysis on the basis of combination of Neural Networks and Classifiers. These Models are judged on the basis of Accuracy, Precision, Recall and F1-Value.
 
 ### Project Workflow
 
 It has two workflows
 
-* **For Backend**
+1. **For Backend**
 <img src="Documents/Images/Module-1.jpg">
 
-* **System Design (Frontend+Backend)**
+2. **System Design (Frontend+Backend)**
 
 <img src="Documents/Images/System-Design.jpg">
 
 ### Research Paper Workflow
+
+<img src="Documents/Images/Paper-Work-Flow.jpg">
 
 ## Deployment
 
