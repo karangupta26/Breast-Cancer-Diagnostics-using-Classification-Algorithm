@@ -94,8 +94,12 @@ In this Project/Paper there two workflows
 
 It has two workflows
 
-* For Backend
+* **For Backend**
 <img src="Documents/Images/Module-1.jpg">
+
+* **System Design (Frontend+Backend)**
+
+<img src="Documents/Images/System-Design.jpg">
 
 ### Research Paper Workflow
 
