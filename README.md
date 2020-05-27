@@ -23,10 +23,11 @@
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
 The Above Project Uses Machine Learning and Deep Learning Algorithms in the Backend as Processing the Image and
-in the frontend we have used Flask app for handling these In
+in the frontend we have used Flask app for handling these Inputs
 
 ## Requirements
 ### Library
+The Python Library required for running the project are- [Requirements](https://github.com/karangupta26/Breast-Cancer-Diagnostics-using-Classification-Algorithm/blob/master/Backend/Library%20Needed/requirements.txt)
 ### System
 
 ## Project Aim
