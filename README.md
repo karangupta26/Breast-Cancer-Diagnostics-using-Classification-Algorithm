@@ -82,6 +82,11 @@ In Whole Project we have used below mentioned platforms
 
 
 ## System Setup
+
+For Deep Learning please ensure you have Gmail id with empty google drive of almost 7 GB to run google Colab.
+
+For Local System, Install the Local requirements
+
     pip install -r requirements.txt
 
 ## Workflow
