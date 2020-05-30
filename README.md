@@ -127,14 +127,13 @@ It has two workflows
 1. Support Vector Machine Scores
 
     1. Cross Validation Scores
-        |      Neural     | Magnification     |                 Cancer Classification at each Magnification         |  Cancer Subtype at Each Magnification|
-        |     Networks    |                   |  :------------- | :------------------------------------------------ |  :---------------------------------- |  
-        |                 |                   |  40X Mag.       | 100X Mag.      |  200X Mag.      | 400X Mag.      |  Benign           | Malignant        |  
-        | :-------------  | :---------------- |  :------------- | :------------- |  :------------- | :------------- |  :--------------- | :--------------- |  
-        | VGG16           | 83.10             |  85.94          | 86.013         |  86.70          | 85.49          |  69.94            | 70.88            |  
-        | VGG19           | 83.54             |  84.02          | 82.98          |  86.95          | 85.70          |  68.68            | 71.70            |  
-        | ResNet50        | 84.6              |  86.96          | 85.18          |  86.64          | 86.00          |  71.47            | 71.20            |  
-        | Xception        | 89.31             |  87.46          | 87.37          |  89.37          | 90.09          |  80.15            | 78.73            |  
+        | Neural Networks     | Magnification     |                 Cancer Classification at each Magnification         |  Cancer Subtype at Each Magnification|
+        |                     |                   |  40X Mag.       | 100X Mag.      |  200X Mag.      | 400X Mag.      |  Benign           | Malignant        |  
+        | :-----------------  | :---------------- |  :------------- | :------------- |  :------------- | :------------- |  :--------------- | :--------------- |  
+        | VGG16               | 83.10             |  85.94          | 86.013         |  86.70          | 85.49          |  69.94            | 70.88            |  
+        | VGG19               | 83.54             |  84.02          | 82.98          |  86.95          | 85.70          |  68.68            | 71.70            |  
+        | ResNet50            | 84.6              |  86.96          | 85.18          |  86.64          | 86.00          |  71.47            | 71.20            |  
+        | Xception            | 89.31             |  87.46          | 87.37          |  89.37          | 90.09          |  80.15            | 78.73            |  
 
 ### Research Paper Result Analysis
 
