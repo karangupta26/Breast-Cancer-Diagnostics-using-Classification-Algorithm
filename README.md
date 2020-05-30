@@ -123,11 +123,11 @@ It has two workflows
 
 ### Support Vector Machine Scores
 
-<img src="Documents/Images/SVM_LR_CV_Scores.jpg">
+<img src="Documents/Images/SVM_LR_CV_Scores.JPG">
 
 ### Support Vector Machine Scores
 
-<img src="Documents/Images/SVM_LR_Actual_Scores.jpg">
+<img src="Documents/Images/SVM_LR_Actual_Scores.JPG">
 
 ## Future Work
 
