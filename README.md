@@ -118,13 +118,23 @@ It has two workflows
 4. After Downloading the features we can use [machine learning algorithms] (https://github.com/karangupta26/Breast-Cancer-Diagnostics-using-Classification-Algorithm/tree/master/Backend/Machine%20Learning%20Algo)
 5. After all the Analysis of Models, we will separate models for research and project.
 6. The Project models will be deployed in Flask as an API. Execute below Command
+
     python app.py
 
 ## Result
 ### Project Result Analysis
+
 1. Support Vector Machine Scores
-    1.1. Cross Validation Scores
-    
+
+    1. Cross Validation Scores
+        |      Neural     | Magnification     |                 Cancer Classification at each Magnification         |  Cancer Subtype at Each Magnification|
+        |     Networks    |                   |  :------------- | :------------- |  :------------- | :------------- |  :--------------- | :--------------- |  
+        |                 |                   |  40X Mag.       | 100X Mag.      |  200X Mag.      | 400X Mag.      |  Benign           | Malignant        |  
+        | :-------------  | :---------------- |  :------------- | :------------- |  :------------- | :------------- |  :--------------- | :--------------- |  
+        | VGG16           | 83.10             |  85.94          | 86.013         |  86.70          | 85.49          |  69.94            | 70.88            |  
+        | VGG19           | 83.54             |  84.02          | 82.98          |  86.95          | 85.70          |  68.68            | 71.70            |  
+        | ResNet50        | 84.6              |  86.96          | 85.18          |  86.64          | 86.00          |  71.47            | 71.20            |  
+        | Xception        | 89.31             |  87.46          | 87.37          |  89.37          | 90.09          |  80.15            | 78.73            |  
 
 ### Research Paper Result Analysis
 
