@@ -117,13 +117,16 @@ It has two workflows
 3. After Training And testing, we have to Run A Post- Exploratory Data Analysis then Upload the Data set on to Google Drive For Feature extraction by [Deep Learning Algorthms](https://github.com/karangupta26/Breast-Cancer-Diagnostics-using-Classification-Algorithm/tree/master/Backend/CNN). In this Project I have taken only 4 Feature Extraction Algorithms that are VGG16, VGG19, ResNet and Xception. Running these Scripts DownLoad The Feature One by One so that drive space is maintained.
 4. After Downloading the features we can use [machine learning algorithms] (https://github.com/karangupta26/Breast-Cancer-Diagnostics-using-Classification-Algorithm/tree/master/Backend/Machine%20Learning%20Algo)
 5. After all the Analysis of Models, we will separate models for research and project.
-6. The Project models will be deployed in Flask as an API.
+6. The Project models will be deployed in Flask as an API. Execute below Command
+    python app.py
 
 ## Result
 ### Project Result Analysis
+1. Support Vector Machine Scores
+    1.1. Cross Validation Scores
+    
 
-### Project Result
-### Research Paper Result
+### Research Paper Result Analysis
 
 ## Future Work
 
