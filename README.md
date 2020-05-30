@@ -127,6 +127,7 @@ It has two workflows
 1. Support Vector Machine Scores
 
     1. Cross Validation Scores
+    
         | Neural Networks     | Magnification     |                 Cancer Classification at each Magnification         |  Cancer Subtype at Each Magnification|
         |                     |                   |  40X Mag.       | 100X Mag.      |  200X Mag.      | 400X Mag.      |  Benign           | Malignant        |  
         | :-----------------  | :---------------- |  :------------- | :------------- |  :------------- | :------------- |  :--------------- | :--------------- |  
