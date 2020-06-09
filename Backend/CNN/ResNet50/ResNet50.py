@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# # Importing System, Data Wrangling, Deeplearning Libaries
+
+# In[ ]:
 
 
 from PIL import Image
@@ -19,16 +21,25 @@ import pickle
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
-from keras import applications
-import glob
+from keras.applications import ResNet50
 
 
-# In[ ]:
+# In[8]:
+
+
+get_ipython().system('pip install keras')
+
+
+# # Importing Google Drive for Mounting
+
+# In[2]:
 
 
 from google.colab import drive 
 drive.mount('/content/drive')
 
+
+# The Below Variables are used for Saving paths in Google Drive
 
 # In[ ]:
 
@@ -43,14 +54,14 @@ savingpath="/content/drive/My Drive/Major Project B.Tech Sem 8/"
 train_data_dir=path+"Train"
 test_data_dir=path+"Test"
 
-#Training paths
+#Training paths for saving
 data_cnn_ResNet50_train=savingpath+"ResNet50/train/data_cnn_ResNet50_train.npy"
 data_filenames_ResNet50_train=savingpath+"ResNet50/train/data_filenames_ResNet50_train.npy"
 data_cancerclass_ResNet50_train=savingpath+"ResNet50/train/data_cancerclass_ResNet50_train.npy"
 data_cancertype_ResNet50_train=savingpath+"ResNet50/train/data_cancertype_ResNet50_train.npy"
 data_mag_ResNet50_train=savingpath+"ResNet50/train/data_mag_ResNet50_train.npy"
 
-#Testing paths
+#testing paths for saving
 data_cnn_ResNet50_test=savingpath+"ResNet50/test/data_cnn_ResNet50_test.npy"
 data_filenames_ResNet50_test=savingpath+"ResNet50/test/data_filenames_ResNet50_test.npy"
 data_cancerclass_ResNet50_test=savingpath+"ResNet50/test/data_cancerclass_ResNet50_test.npy"
@@ -58,65 +69,66 @@ data_cancertype_ResNet50_test=savingpath+"ResNet50/test/data_cancertype_ResNet50
 data_mag_ResNet50_test=savingpath+"ResNet50/test/data_mag_ResNet50_test.npy"
 
 
-# In[ ]:
+# ###### The below block is for genrating Training Data for the Machine learning models
+
+# In[15]:
 
 
-from keras.applications.resnet50 import ResNet50, preprocess_input
-from keras.layers import Input
-from keras.preprocessing import image
-from keras.models import Model
-import numpy as np
-
-#model = ResNet50(weights='imagenet', include_top=True)
-
-model = ResNet50(weights='imagenet')
-#model = Model(input=base_model.input, output=base_model.get_layer('flatten').output)
-image_size = (224, 224)
-
-
-# In[12]:
-
-
+# Start Clock for time tracking
 start_time = time.clock()
 # dimensions of our images.
 img_width, img_height = 224, 224
-#top_model_weights_path = 'bottleneck_fc_model.h5'
-#epochs = 50
-#batch_size = 1
-print("Started")
-
+epochs = 50
+batch_size = 1
+#print("Started")
+# Util function for Checking the Substring like Cancer  class or Cancer Subtype or Magnification
 def check(string, sub_str): 
     if (string.find(sub_str) == -1): 
         return "NO" 
     else: 
         return "YES" 
-
+# The Below Function Genrates and Return Numpy 2-D Array for Training Images
 def save_bottlebeck_features_train(train_data=train_data_dir,nb_train_samples=5000,batch_size=1):
     
-    #Function to compute VGG-16 CNN for image feature extraction.
-        
-    filenames = []
-    cancerclass=[]
-    cancertype=[]
-    mag=[]
-    features=[]
-    datagen = ImageDataGenerator(rescale=1. / 255)
-    print("Initialized Required data and datagen done")                                                
+    
+    """
+    Function to compute InceptionResNetV2 CNN for image feature extraction.
+    
+    Parameters:
+        train_data:-            It cantains the traingin data path
+        nb_train_samples:-      Total number of Samples as Training Images
+        batch_size:-            This Parameter ensures how Many batchhes to be created for precessing the images
+                                Default is 1.
+    """
+    
+    filenames = []                                                   # Array for Storing the Filenames
+    cancerclass=[]                                                   # Array for Storing the Cancer Class for Particular Tensor
+    cancertype=[]                                                    # Array for Storing the Cancer Subtype for Particular Tensor
+    mag=[]                                                           # Array for Storing the Magnification lense for particular tensor
+    datagen = ImageDataGenerator(rescale=1. / 255)                   # Variable to Perform Pre-processing of the Images by scaling them.
+    #print("Initialized Required data and datagen done")                                                
     # build the ResNet50 network
-    #model = applications.ResNet50(include_top=False, weights='imagenet')
+    # Setting up the include_top as False to not include Final Dense Layer
+    # Including the weights of ImageNet Dataset
+    model = applications.ResNet50(include_top=False, weights='imagenet')
     #print("Model settled")
+    """
+        Excecuting the Genrator Function to Genrate the Images from the Directory
+        Process their Filenames
+    """
     generator = datagen.flow_from_directory(
         train_data,
         target_size=(img_width, img_height),
         batch_size=batch_size,
         class_mode=None,
         shuffle=False)
-    print("Genrator work finish")
-    start_time = time.clock()
-    a=1
+    """
+        Excecuting the Genrator Function to Genrate the Images from the Directory
+        Process their Filenames
+    """
+    #start_time = time.clock()
     for i in generator.filenames:
-        #print(i)
-        #print(type)
+        
         # Array for File NAmes
         filenames.append(i)
         
@@ -151,75 +163,78 @@ def save_bottlebeck_features_train(train_data=train_data_dir,nb_train_samples=50
           if(flagformagnifications=="YES"):
             mag.append(codeformagnifications[j])
           j=j+1
- 
-        image_path=train_data_dir+"/"+i
-        img = image.load_img(image_path, target_size=image_size)
-        x = image.img_to_array(img)
-        x = np.expand_dims(x, axis=0)
-        x = preprocess_input(x)
-        feature = model.predict(x)
-        flat = feature.flatten()
-        features.append(flat)
-    
-    6
-        
-    print(cancerclass)    
-    print(cancertype)
-    print(mag)
-    print("For loop ended")
-    print(time.clock() - start_time, "seconds, time for loop")
-    print(generator)
-    
-    features=np.array(features)
-    print(features.shape)
-     
-    
-    print("reshape the trained vector")
-    #features = features.reshape((5000,25088))
-    print("Trainning done")
-    np.save(open(data_cnn_ResNet50_train, 'wb'), features)
+    """
+        print(cancerclass)    
+        print(cancertype)
+        print(mag)
+        print("For loop ended")
+        print(time.clock() - start_time, "seconds, time for loop")
+        print(generator)
+        print("training start")
+    """
+    # Time for the Neural Network To genrate the Features
+    start_time = time.clock()
+    bottleneck_features_train = model.predict_generator(generator, nb_train_samples // batch_size)
+    print(time.clock() - start_time, "seconds, time for training")
+    #print("training finised")
+    #print("reshape the trained vector")
+    # ReShaping the Data 
+    bottleneck_features_train = bottleneck_features_train.reshape((5000,100352))
+    #print("Trainning done")
+    # Saving the Numpy Arrays 
+    np.save(open(data_cnn_ResNet50_train, 'wb'), bottleneck_features_train)
     np.save(open(data_filenames_ResNet50_train, 'wb'), np.array(filenames))
     np.save(open(data_cancerclass_ResNet50_train, 'wb'), np.array(cancerclass))
     np.save(open(data_cancertype_ResNet50_train, 'wb'), np.array(cancertype))
     np.save(open(data_mag_ResNet50_train, 'wb'), np.array(mag))
     print("npy file saved")
+    
 
 save_bottlebeck_features_train()
 
 print(time.clock() - start_time, "seconds")
 
 
-# In[13]:
+# In[18]:
 
 
+# Start Clock for time tracking
 start_time = time.clock()
 # dimensions of our images.
 img_width, img_height = 224, 224
-top_model_weights_path = 'bottleneck_fc_model.h5'
 epochs = 50
 batch_size = 1
-print("Started")
-
+#print("Started")
+# Util function for Checking the Substring like Cancer  class or Cancer Subtype or Magnification
 def check(string, sub_str): 
     if (string.find(sub_str) == -1): 
         return "NO" 
     else: 
         return "YES" 
+# The Below Function Genrates and Return Numpy 2-D Array for Testing Images
 
 def save_bottlebeck_features_test(train_data=test_data_dir,nb_train_samples=2900,batch_size=1):
+    """
+    Function to compute InceptionResNetV2 CNN for image feature extraction.
     
-    #Function to compute VGG-16 CNN for image feature extraction.
+    Parameters:
+        train_data:-            It cantains the testing data path
+        nb_train_samples:-      Total number of Samples as Testing Images
+        batch_size:-            This Parameter ensures how Many batchhes to be created for precessing the images
+                                Default is 1.
+    """
     
-    features=[]
-    filenames = []
-    cancerclass=[]
-    cancertype=[]
-    mag=[]
-    datagen = ImageDataGenerator(rescale=1. / 255)
-    print("Initialized Required data and datagen done")                                                
+    filenames = []                                                   # Array for Storing the Filenames
+    cancerclass=[]                                                   # Array for Storing the Cancer Class for Particular Tensor
+    cancertype=[]                                                    # Array for Storing the Cancer Subtype for Particular Tensor
+    mag=[]                                                           # Array for Storing the Magnification lense for particular tensor
+    datagen = ImageDataGenerator(rescale=1. / 255)                   # Variable to Perform Pre-processing of the Images by scaling them.
+    #print("Initialized Required data and datagen done")                                                
     # build the ResNet50 network
-    #model = applications.ResNet50(include_top=False, weights='imagenet')
-    #print("Model settled")
+    # Setting up the include_top as False to not include Final Dense Layer
+    # Including the weights of ImageNet Dataset
+    model = applications.ResNet50(include_top=False, weights='imagenet')
+    print("Model settled")
     generator = datagen.flow_from_directory(
         train_data,
         target_size=(img_width, img_height),
@@ -244,7 +259,7 @@ def save_bottlebeck_features_test(train_data=test_data_dir,nb_train_samples=2900
         
         # Array For Cancer Type
         cancersubtypes=['_A-','_F-','_PT-','_TA-','_DC-','_LC-','_MC-','_PC-']
-        codeforcancersubtypes=[11,12,13,14,21,22,23,24]
+        codeforcancersubtypes=[11,12,13,14,21,22,23,24]                           # Numerical Coding of the Cancer Sutype CLasses
         k=0
         for types in cancersubtypes:          
           flagforcancersubtypes=check(i,types)         
@@ -264,28 +279,25 @@ def save_bottlebeck_features_test(train_data=test_data_dir,nb_train_samples=2900
           if(flagformagnifications=="YES"):
             mag.append(codeformagnifications[j])
           j=j+1
-          
-        image_path=test_data_dir+"/"+i
-        img = image.load_img(image_path, target_size=image_size)
-        x = image.img_to_array(img)
-        x = np.expand_dims(x, axis=0)
-        x = preprocess_input(x)
-        feature = model.predict(x)
-        flat = feature.flatten()
-        features.append(flat)
-    
-    features=np.array(features)
-    print(features.shape)
-    
-    print(cancerclass)    
-    print(cancertype)
-    print(mag)
-    print("For loop ended")
-    print(time.clock() - start_time, "seconds, time for loop")
-    print(generator)
-    
-    print("Trainning done")
-    np.save(open(data_cnn_ResNet50_test, 'wb'), features)
+        
+   """
+        print(cancerclass)    
+        print(cancertype)
+        print(mag)
+        print("For loop ended")
+        print(time.clock() - start_time, "seconds, time for loop")
+        print(generator)
+        print("training start")
+    """
+    # Time for the Neural Network To genrate the Features
+    start_time = time.clock()
+    bottleneck_features_train = model.predict_generator(generator, nb_train_samples // batch_size)
+    print(time.clock() - start_time, "seconds, time for training")
+    #print("training finised")
+    # ReShaping the Data
+    bottleneck_features_train = bottleneck_features_train.reshape((2900,100352))
+    #print("Trainning done")
+    np.save(open(data_cnn_ResNet50_test, 'wb'), bottleneck_features_train)
     np.save(open(data_filenames_ResNet50_test, 'wb'), np.array(filenames))
     np.save(open(data_cancerclass_ResNet50_test, 'wb'), np.array(cancerclass))
     np.save(open(data_cancertype_ResNet50_test, 'wb'), np.array(cancertype))
@@ -296,48 +308,6 @@ def save_bottlebeck_features_test(train_data=test_data_dir,nb_train_samples=2900
 save_bottlebeck_features_test()
 
 print(time.clock() - start_time, "seconds , Testing data also saved")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
 
 # In[ ]:
