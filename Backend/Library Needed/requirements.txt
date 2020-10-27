@@ -1,4 +1,4 @@
-cryptography==2.6.1
+cryptography==3.2
   - asn1crypto [required: >=0.21.0, installed: 0.24.0]
   - cffi [required: >=1.8,!=1.11.3, installed: 1.12.2]
     - pycparser [required: Any, installed: 2.19]
