@@ -942,7 +942,7 @@ tables==3.5.1
   - numpy [required: >=1.9.3, installed: 1.16.1]
   - six [required: >=1.9.0, installed: 1.12.0]
 tdm==0.1.0
-tensorflow==1.13.1
+tensorflow==2.5.0
   - absl-py [required: >=0.1.6, installed: 0.7.1]
     - six [required: Any, installed: 1.12.0]
   - astor [required: >=0.6.0, installed: 0.7.1]
