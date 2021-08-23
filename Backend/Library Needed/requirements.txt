@@ -604,7 +604,7 @@ jupyter==1.0.0
       - decorator [required: Any, installed: 4.3.2]
       - ipython-genutils [required: Any, installed: 0.2.0]
       - six [required: Any, installed: 1.12.0]
-jupyterlab==2.0.1
+jupyterlab==2.2.10
   - jinja2 [required: >=2.10, installed: 2.10]
     - MarkupSafe [required: >=0.23, installed: 1.1.0]
   - jupyterlab-server [required: ~=1.0.0, installed: 1.0.7]
