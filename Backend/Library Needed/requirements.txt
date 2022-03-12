@@ -904,7 +904,7 @@ pandoc==1.0.2
 partd==0.3.10
   - locket [required: Any, installed: 0.2.0]
   - toolz [required: Any, installed: 0.9.0]
-Pillow==5.4.1
+Pillow==9.0.1
 pipdeptree==0.13.2
   - pip [required: >=6.0.0, installed: 20.0.2]
 pipreqs==0.4.10
