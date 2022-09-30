@@ -58,7 +58,7 @@ Flask==1.0.2
     - MarkupSafe [required: >=0.23, installed: 1.1.0]
   - Werkzeug [required: >=0.14, installed: 0.14.1]
 ipython-autotime==0.1
-joblib==0.13.2
+joblib==1.2.0
 jupyter==1.0.0
   - ipykernel [required: Any, installed: 5.1.0]
     - ipython [required: >=5.0.0, installed: 7.3.0]
